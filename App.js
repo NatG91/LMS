@@ -1,15 +1,16 @@
 import React from 'react';
-import { Text, View, Image, TextInput } from 'react-native';
-import {createAppContainer} from 'react-navigation'
+import { Text, View, Image, TextInput, StyleSheet } from 'react-native';
+import {createAppContainer, createSwitchNavigator} from 'react-navigation'
 import {createBottomTabNavigator} from 'react-navigation-tabs'
 import TransactionScreen from './Screens/BookTransactionScreen'
 import SearchScreen from './Screens/SearchScreen'
+import LoginScreen from './Screens/LoginScreen'
 
 
 export default class App extends React.Component {
   render(){
    return (
-<AppContainer/>
+  <View styles={styles.container}><AppContainer/> </View>
 );
 }
 }
@@ -34,6 +35,19 @@ if(routeName==='Transaction'){
   }
 })}
 
-)
-const AppContainer = createAppContainer(TabNavigator)
- 
+) 
+const switchNavigator = createSwitchNavigator({
+  LoginScreen: {screen:LoginScreen},
+  TabNavigator: {screen:TabNavigator}
+})
+const AppContainer = createAppContainer(switchNavigator)
+
+const styles = StyleSheet.create({
+  container:{
+    flex: 1,
+    backgroundColor: "lightblue",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+})
+

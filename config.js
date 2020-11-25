@@ -1,7 +1,7 @@
 import firebase from 'firebase/app'
 require('@firebase/firestore')
 
-  // Your web app's Firebase configuration
+// Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyCSJbnb1xxh4vsfrMuOFvVBBRV9CRAqbGM",
     authDomain: "lms-whj.firebaseapp.com",
