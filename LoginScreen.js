@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View,TextInput,Image, Alert, TouchableOpacity} from 'react-native';
-import * as firebase from 'firebase'
+import firebase from 'firebase/app'
+require('@firebase/firestore')
+require('firebase/auth');
 
 export default class LoginScreen extends React.Component {
   constructor(){
@@ -15,7 +17,7 @@ if (email && password){
   console.log("IfEmail:",email)
     console.log("IfPassword:",password)
   try{
-    console.log("Email:",email)
+    console.log("Email:",em5ail)
     console.log("Password:",password)
 const response = await firebase.auth().signInWithEmailAndPassword(email,password)
 console.log("response is: ",response)
